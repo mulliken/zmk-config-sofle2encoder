@@ -49,7 +49,7 @@
                                &none        &kp LGUI     &mt FUNC ESC  &mt SNAV TAB  &mt NUMS SPACE  &mt SNAV ENTER  &mt NUMS BSPC  &mt FUNC DEL  &kp RGUI         &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_up_down SCRL_UP SCRL_DOWN>;
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP_ENCODER SCRL_DOWN_ENCODER>;
         };
 
@@ -71,7 +71,7 @@
                    &trans     &trans    &trans    &trans     &trans    &trans  &trans          &trans         &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_up_down SCRL_UP SCRL_DOWN>;
         };
 
         snav_layer {
@@ -92,11 +92,12 @@
                     &trans     &trans       &trans       &trans    &trans    &trans  &trans         &trans          &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_LEFT SCRL_RIGHT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_left_right SCRL_LEFT SCRL_RIGHT>;
         };
 
         func_layer {
             display-name = "func";
+
             // ----------------------------------------------------------------------------------------------------------------------------
             // |        |     |     |    |    |             |                  |      |      |       |      |       |       |
             // |        | F12 |  F7 | F8 | F9 | PRSCN       |                  |      |      |       |      |       |       |
@@ -112,7 +113,7 @@
                  &trans  &trans  &trans  &trans           &trans    &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_LEFT SCRL_RIGHT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_left_right SCRL_LEFT SCRL_RIGHT>;
         };
 
         game_layer {
@@ -132,7 +133,7 @@
                    &none   &kp LSHFT  &kp ESC  &kp TAB  &kp SPACE &none  &none  &none  &none  &none
             >;
 
-            sensor-bindings = <&inc_dec_msc SCRL_UP SCRL_DOWN &inc_dec_msc SCRL_LEFT SCRL_RIGHT>;
+            sensor-bindings = <&scroll_up_down SCRL_UP SCRL_DOWN &scroll_left_right SCRL_LEFT SCRL_RIGHT>;
         };
 
         adjust_layer {
