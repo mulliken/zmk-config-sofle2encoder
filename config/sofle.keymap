@@ -42,8 +42,8 @@
             //               |     | GUI  | ESC  | TAB  |  SPACE |  | ENTER | BSPC | DEL   | GUI   |      |
 
             bindings = <
-&gresc            &kp N1       &kp N2       &kp N3       &kp N4        &kp N5                                        &kp N6         &kp N7        &kp N8           &kp N9        &kp N0         &tog 6
-&kp TAB           &kp Q        &kp W        &kp F        &kp P         &kp B                                         &kp J          &kp L         &kp U            &kp Y         &kp SQT        &tog 5
+&gresc            &kp N1       &kp N2       &kp N3       &kp N4        &kp N5                                        &kp N6         &kp N7        &kp N8           &kp N9        &kp N0         &tog 5
+&kp TAB           &kp Q        &kp W        &kp F        &kp P         &kp B                                         &kp J          &kp L         &kp U            &kp Y         &kp SQT        &tog 4
 &kp LEFT_SHIFT    &kp A        &kp R        &kp S        &kp T         &kp G                                         &kp M          &kp N         &kp E            &kp I         &kp O          &kp SQT
 &kp LEFT_CONTROL  &mt LGUI Z   &mt LALT X   &mt LSHFT C  &mt LCTRL D   &kp V         &kp C_MUTE      &none           &kp K          &mt RCTRL H   &mt RSHFT COMMA  &mt LALT DOT  &mt RGUI FSLH  &kp RSHFT
                                &none        &kp LGUI     &mt FUNC ESC  &mt SNAV TAB  &mt NUMS SPACE  &mt SNAV ENTER  &mt NUMS BSPC  &mt FUNC DEL  &kp RGUI         &none
@@ -126,7 +126,7 @@
 
             bindings = <
 &none      &kp N1  &kp N2  &kp N3     &kp N4   &kp N5                    &none  &none  &none  &none  &none  &none
-&none      &kp T   &kp Q   &kp W      &kp E    &kp R                     &none  &none  &none  &none  &none  &tog 5
+&none      &kp T   &kp Q   &kp W      &kp E    &kp R                     &none  &none  &none  &none  &none  &tog 4
 &kp LSHFT  &kp G   &kp A   &kp S      &kp D    &kp F                     &none  &none  &none  &none  &none  &none
 &kp LCTRL  &kp Z   &kp X   &kp C      &kp V    &kp B    &none     &none  &none  &none  &none  &none  &none  &none
                    &none   &kp LSHFT  &kp ESC  &kp TAB  &kp SPACE &none  &none  &none  &none  &none
@@ -145,7 +145,7 @@
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none  &none  &none  &none  &none  &tog 6
+&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none  &none  &none  &none  &none  &tog 5
 &ext_power EP_TOG  &none         &none         &none         &none         &studio_unlock                  &none  &none  &none  &none  &none  &none
 &none              &none         &none         &none         &none         &none                           &none  &none  &none  &none  &none  &none
 &none              &none         &none         &none         &none         &caps_word      &none    &none  &none  &none  &none  &none  &none  &none
