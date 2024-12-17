@@ -25,13 +25,6 @@
          	bindings = <&mmv>, <&mmv>;
 			tap-ms = <20>;
 		};
-
-		scrl_around: behavior_sensor_rotate_mouse_wheel_2 {
-			compatible = "zmk,behavior-sensor-rotate";
-			#sensor-binding-cells = <0>;
-         	bindings = <&msc>, <&msc>;
-			tap-ms = <20>;
-		};
 	};
 };
 
