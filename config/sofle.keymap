@@ -18,6 +18,13 @@
 #define GAMING 4
 #define ADJUST 5
 
+&left_encoder { steps = <0>; };
+&right_encoder { steps = <0>; };
+
+&sensors {
+    triggers-per-rotation = <96>;
+};
+
 / {
     behaviors {
         caps: caps {
@@ -45,13 +52,14 @@
 &gresc            &kp N1       &kp N2       &kp N3       &kp N4        &kp N5                                        &kp N6         &kp N7        &kp N8           &kp N9        &kp N0         &tog 5
 &kp TAB           &kp Q        &kp W        &kp F        &kp P         &kp B                                         &kp J          &kp L         &kp U            &kp Y         &kp SQT        &tog 4
 &kp LEFT_SHIFT    &kp A        &kp R        &kp S        &kp T         &kp G                                         &kp M          &kp N         &kp E            &kp I         &kp O          &kp SQT
-&kp LEFT_CONTROL  &mt LGUI Z   &mt LALT X   &mt LSHFT C  &mt LCTRL D   &kp V         &kp C_MUTE      &kp C_MUTE      &kp K          &mt RCTRL H   &mt RSHFT COMMA  &mt LALT DOT  &mt RGUI FSLH  &kp RSHFT
-                               &none        &kp LGUI     &lt 3 ESC     &lt 2 TAB     &lt 1 SPACE     &lt 2 ENTER     &lt 1 BSPC     &lt 3 DEL     &kp RGUI         &none
+&kp LEFT_CONTROL  &mt LGUI Z   &mt LALT X   &mt LSHFT C  &mt LCTRL D   &kp V         &none           &none           &kp K          &mt RCTRL H   &mt RSHFT COMMA  &mt LALT DOT  &mt RGUI FSLH  &kp RSHFT
+                               &none        &kp LGUI     &lt 3 ESC     &lt 2 SPACE   &lt 1 TAB       &lt 2 ENTER     &lt 1 BSPC     &lt 3 DEL     &kp RGUI         &none
             >;
 
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_up_down SCRL_UP SCRL_DOWN>;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_msc SCRL_LEFT_ENCODER SCRL_RIGHT_ENCODER &inc_dec_msc SCRL_UP_ENCODER SCRL_DOWN_ENCODER>;
         };
 
         num_layer {
@@ -65,16 +73,17 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans  &kp F1     &kp F2     &kp F3    &kp F4  &kp F5                         &kp F6          &kp F7         &kp F8          &kp F9                &kp F10                &kp F11
-&trans  &kp LBKT   &kp N7     &kp N8    &kp N9  &kp RBKT                       &kp CARET       &kp N7         &kp N8          &kp N5                &kp RIGHT_PARENTHESIS  &kp F12
-&trans  &kp SEMI   &kp N4     &kp N5    &kp N6  &kp EQUAL                      &kp MINUS       &kp N4         &kp N5          &kp N4                &kp RIGHT_BRACKET      &kp PIPE
-&trans  &kp GRAVE  &kp N1     &kp N2    &kp N3  &kp BSLH     &trans    &trans  &kp UNDERSCORE  &kp N1         &kp N2          &kp N3                &kp PIPE               &trans
-                   &trans     &trans    &trans    &trans     &trans    &trans  &trans          &trans         &trans          &trans
+&trans  &kp F1     &kp F2     &kp F3    &kp F4  &kp F5                          &kp F6          &kp F7         &kp F8          &kp F9                &kp F10                &kp F11
+&trans  &kp LBKT   &kp N7     &kp N8    &kp N9  &kp RBKT                        &kp CARET       &kp N7         &kp N8          &kp N5                &kp RIGHT_PARENTHESIS  &kp F12
+&trans  &kp SEMI   &kp N4     &kp N5    &kp N6  &kp EQUAL                       &kp MINUS       &kp N4         &kp N5          &kp N4                &kp RIGHT_BRACKET      &kp PIPE
+&trans  &kp GRAVE  &kp N1     &kp N2    &kp N3  &kp BSLH     &trans     &trans  &kp UNDERSCORE  &kp N1         &kp N2          &kp N3                &kp PIPE               &trans
+                   &trans     &trans    &trans    &kp N0     &kp MINUS  &trans  &trans          &kp N0         &kp N0          &trans
             >;
 
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_up_down SCRL_UP SCRL_DOWN>;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP_ENCODER SCRL_DOWN_ENCODER>;
         };
 
         snav_layer {
@@ -88,16 +97,17 @@
             //                |     |     |       |     |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &trans      &trans     &trans       &trans       &trans                      &trans         &trans          &trans          &trans        &trans         &trans
-&trans  &kp LBRC    &kp AMPS   &kp STAR     &kp LPAR     &kp RBRC                    &kp LC(R)      &kp LC(V)       &kp LC(C)       &kp LC(X)     &kp LC(U)      &trans
-&trans  &kp COLON   &kp DLLR   &kp PRCNT    &kp CARET    &kp PLUS                    &kp LEFT       &kp DOWN        &kp UP          &kp RIGHT     &kp CAPS       &trans
-&trans  &kp TILDE   &kp EXCL   &kp AT       &kp POUND    &kp PIPE  &trans    &trans  &kp INS        &kp HOME        &kp PG_DN       &kp PG_UP     &kp END        &trans
-                    &trans     &trans       &trans       &trans    &trans    &trans  &trans         &trans          &trans          &trans
+&trans  &trans      &trans     &trans       &trans       &trans                       &trans         &trans          &trans          &trans        &trans         &trans
+&trans  &kp LBRC    &kp AMPS   &kp STAR     &kp LPAR     &kp RBRC                     &kp LC(R)      &kp LC(V)       &kp LC(C)       &kp LC(X)     &kp LC(U)      &trans
+&trans  &kp COLON   &kp DLLR   &kp PRCNT    &kp CARET    &kp PLUS                     &kp LEFT       &kp DOWN        &kp UP          &kp RIGHT     &kp CAPS       &trans
+&trans  &kp TILDE   &kp EXCL   &kp AT       &kp POUND    &kp PIPE  &trans     &trans  &kp INS        &kp HOME        &kp PG_DN       &kp PG_UP     &kp END        &trans
+                    &trans     &trans       &kp LPAR     &kp RPAR  &kp UNDER  &trans  &trans         &trans          &trans          &trans
             >;
 
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_left_right SCRL_LEFT SCRL_RIGHT>;
-            sensor-bindings = <&inc_dec_msc SCRL_LEFT SCRL_RIGHT &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            // sensor-bindings = <&inc_dec_msc SCRL_LEFT SCRL_RIGHT &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP_ENCODER SCRL_DOWN_ENCODER>;
         };
 
         func_layer {
@@ -119,8 +129,9 @@
             >;
 
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
-            sensor-bindings = <&inc_dec_msc SCRL_LEFT SCRL_RIGHT &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            // sensor-bindings = <&inc_dec_msc SCRL_LEFT SCRL_RIGHT &inc_dec_msc SCRL_UP SCRL_DOWN>;
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_left_right SCRL_LEFT SCRL_RIGHT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP_ENCODER SCRL_DOWN_ENCODER>;
         };
 
         game_layer {
@@ -133,16 +144,17 @@
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
             bindings = <
-&none      &kp N1  &kp N2  &kp N3     &kp N4   &kp N5                           &none  &none  &none  &none  &none  &none
-&none      &kp T   &kp Q   &kp W      &kp E    &kp R                            &none  &none  &none  &none  &none  &tog 4
-&kp LSHFT  &kp G   &kp A   &kp S      &kp D    &kp F                            &none  &none  &none  &none  &none  &none
-&kp LCTRL  &kp Z   &kp X   &kp C      &kp V    &kp B    &kp C_MUTE  &kp C_MUTE  &none  &none  &none  &none  &none  &none
-                   &none   &kp LSHFT  &kp ESC  &kp TAB  &kp SPACE   &none       &none  &none  &none  &none
+&none      &kp N1  &kp N2  &kp N3     &kp N4   &kp N5                             &none  &none  &none  &none  &none  &none
+&none      &kp T   &kp Q   &kp W      &kp E    &kp R                              &none  &none  &none  &none  &none  &tog 4
+&kp LSHFT  &kp G   &kp A   &kp S      &kp D    &kp F                              &none  &none  &none  &none  &none  &none
+&kp LCTRL  &kp Z   &kp X   &kp C      &kp V    &kp B      &none       &none       &none  &none  &none  &none  &none  &none
+                   &none   &kp LSHFT  &kp ESC  &kp SPACE  &kp TAB     &none       &none  &none  &none  &none
             >;
 
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
-            sensor-bindings = <&inc_dec_msc SCRL_LEFT SCRL_RIGHT &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            // sensor-bindings = <&inc_dec_msc SCRL_LEFT SCRL_RIGHT &inc_dec_msc SCRL_UP SCRL_DOWN>;
             // sensor-bindings = <&scroll_up_down SCRL_UP SCRL_DOWN &scroll_left_right SCRL_LEFT SCRL_RIGHT>;
+            sensor-bindings = <&inc_dec_msc SCRL_UP_ENCODER SCRL_DOWN_ENCODER &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         adjust_layer {
@@ -158,7 +170,7 @@
 &bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                            &none  &none  &none  &none  &none  &tog 5
 &ext_power EP_TOG  &none         &none         &none         &none         &studio_unlock                          &none  &none  &none  &none  &none  &none
 &none              &none         &none         &none         &none         &none                                   &none  &none  &none  &none  &none  &none
-&none              &none         &none         &none         &none         &caps_word      &kp C_MUTE  &kp C_MUTE  &none  &none  &none  &none  &none  &none
+&none              &none         &none         &none         &none         &caps_word      &none       &none       &none  &none  &none  &none  &none  &none
                                  &none         &none         &none         &none           &none       &none       &none  &none  &none  &none
             >;
 

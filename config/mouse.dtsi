@@ -25,6 +25,13 @@
          	bindings = <&mmv>, <&mmv>;
 			tap-ms = <20>;
 		};
+
+		scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+			compatible = "zmk,behavior-sensor-rotate";
+			#sensor-binding-cells = <0>;
+         	bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+			tap-ms = <20>;
+		};
 	};
 };
 
@@ -39,3 +46,12 @@
   time-to-max-speed-ms = <40>;      // 500
   delay-ms = <0>;                   // 10
 };
+
+#define U_MS_U &mmv MOVE_UP
+#define U_MS_D &mmv MOVE_DOWN
+#define U_MS_L &mmv MOVE_LEFT
+#define U_MS_R &mmv MOVE_RIGHT
+#define U_WH_U &msc SCRL_UP
+#define U_WH_D &msc SCRL_DOWN
+#define U_WH_L &msc SCRL_LEFT
+#define U_WH_R &msc SCRL_RIGHT
