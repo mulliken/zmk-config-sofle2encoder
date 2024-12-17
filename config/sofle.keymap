@@ -49,9 +49,9 @@
                                &none        &kp LGUI     &lt 3 ESC     &lt 2 TAB     &lt 1 SPACE     &lt 2 ENTER     &lt 1 BSPC     &lt 3 DEL     &kp RGUI         &none
             >;
 
-            // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
             // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_up_down SCRL_UP SCRL_DOWN>;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP SCRL_DOWN>;
+            // sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_msc SCRL_UP SCRL_DOWN>;
         };
 
         num_layer {
